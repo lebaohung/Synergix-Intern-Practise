@@ -1,15 +1,12 @@
 package test.interface2;
 
 public class Dog implements Animal, Mammal {
+    public void eat() {
 
-
-    @Override
-    public String eat() {
-        return null;
     }
 
-    @Override
-    public String eat(String s) {
-        return null;
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
     }
 }

@@ -1,5 +1,7 @@
 package test.interface2;
 
 public interface Animal {
-    String eat();
+    static void eat() {
+        System.out.println("Animal eating");
+    };
 }
