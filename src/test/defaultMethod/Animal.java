@@ -1,6 +1,6 @@
 package test.defaultMethod;
 
-public interface ZAnimal {
+public interface Animal {
     void run();
     default void eat() {
         System.out.println("Animal eating");

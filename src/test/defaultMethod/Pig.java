@@ -1,6 +1,6 @@
 package test.defaultMethod;
 
-public class Pig implements Mammal, ZAnimal {
+public class Pig implements Mammal, Animal {
     @Override
     public void run() {
         System.out.println("Pig running");
@@ -11,10 +11,11 @@ public class Pig implements Mammal, ZAnimal {
         System.out.println("Pig eating");
     }
 
-//    @Override
-//    public void sleep() {
-//        System.out.println("Pig sleeping");
-//    }
+    @Override
+    public void sleep() {
+        Animal.super.sleep();
+        Mammal.super.sleep();
+    }
 
     public static void main(String[] args) {
         Pig pig = new Pig();

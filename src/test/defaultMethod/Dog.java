@@ -1,6 +1,6 @@
 package test.defaultMethod;
 
-public class Dog implements ZAnimal {
+public class Dog implements Animal {
     @Override
     public void run() {
         System.out.println("Dog running");

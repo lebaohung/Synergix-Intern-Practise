@@ -1,6 +1,6 @@
 package test.defaultMethod;
 
-public interface Mammal extends ZAnimal {
+public interface Mammal  {
 
     void eat();
     default void sleep() {
