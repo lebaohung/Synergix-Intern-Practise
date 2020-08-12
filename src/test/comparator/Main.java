@@ -1,9 +1,6 @@
 package test.comparator;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,8 +20,13 @@ public class Main {
         System.out.println();
 
         CarComparator carComparator = new CarComparator();
-        Collections.sort(list, carComparator);
-
+        Collections.sort(list, carComparator.reversed());
+        Comparator<Car> comparator = new Comparator<Car>() {
+            @Override
+            public int compare(Car o1, Car o2) {
+                return 0;
+            }
+        };
         Iterator<Car> i2 = list.iterator();
         while (i2.hasNext()) {
             System.out.print(i2.next().getName() + ", ");

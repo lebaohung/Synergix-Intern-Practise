@@ -20,9 +20,9 @@ public class Main2 {
         }
         System.out.println();
 
-        Comparator<Car> comparator = Comparator.comparing(Car::getName);
+        Comparator<Car> comparator = Comparator.comparing(Car::getName, (o1, o2) -> { return o2.compareTo(o1); });
 
-        Collections.sort(list, comparator);
+        Collections.sort(list, comparator.reversed());
 
         Iterator<Car> i2 = list.iterator();
         while (i2.hasNext()) {

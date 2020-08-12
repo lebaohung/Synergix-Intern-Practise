@@ -1,5 +1,5 @@
 package test.interface2;
 
 public interface Mammal {
-    void eat();
+    String eat(String s);
 }
