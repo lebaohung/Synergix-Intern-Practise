@@ -20,7 +20,7 @@ public class Main {
         System.out.println();
 
         CarComparator carComparator = new CarComparator();
-        Collections.sort(list, carComparator.reversed());
+        Collections.sort(list, carComparator);
         Comparator<Car> comparator = new Comparator<Car>() {
             @Override
             public int compare(Car o1, Car o2) {
