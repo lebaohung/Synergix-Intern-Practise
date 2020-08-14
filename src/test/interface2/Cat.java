@@ -1,33 +1,56 @@
 package test.interface2;
 
-import test.interface1.Animal;
+public class Cat {
 
-public class Cat implements Animal {
-    @Override
-    public void swim() {
-
+    interface HelloWorld {
+        public void greet();
+        public void greetSomeone(String someone);
     }
 
-    @Override
-    public void eat() {
-        System.out.println("Cat eating...");
+    public void sayHello() {
+
+        class EnglishGreeting implements HelloWorld {
+            String name = "world";
+            public void greet() {
+                greetSomeone("world");
+            }
+            public void greetSomeone(String someone) {
+                name = someone;
+                System.out.println("Hello " + name);
+            }
+        }
+
+        HelloWorld englishGreeting = new EnglishGreeting();
+
+        HelloWorld frenchGreeting = new HelloWorld() {
+            String name = "tout le monde";
+            public void greet() {
+                greetSomeone("tout le monde");
+            }
+            public void greetSomeone(String someone) {
+                name = someone;
+                System.out.println("Salut " + name);
+            }
+        };
+
+        HelloWorld spanishGreeting = new HelloWorld() {
+            @Override
+            public void greet() {
+
+            }
+
+            @Override
+            public void greetSomeone(String someone) {
+
+            }
+        };
+        englishGreeting.greet();
+        frenchGreeting.greetSomeone("Fred");
+        spanishGreeting.greet();
     }
 
-    @Override
-    public void run() {
-        System.out.println("Cat running");
-    }
-
-    @Override
-    public void sleep() {
-        System.out.println("Cat sleeping");
-    }
-
-
-
-    public static void main(String[] args) {
-        Cat cat = new Cat();
-        cat.eat();
-        cat.run();
+    public static void main(String... args) {
+        Cat myApp = new Cat();
+        myApp.sayHello();
     }
 }
