@@ -1,56 +1,32 @@
 package test.interface2;
 
-public class Cat {
 
-    interface HelloWorld {
-        public void greet();
-        public void greetSomeone(String someone);
+class Cat {
+
+    class A {
+
     }
 
-    public void sayHello() {
+    interface B {
 
-        class EnglishGreeting implements HelloWorld {
-            String name = "world";
-            public void greet() {
-                greetSomeone("world");
-            }
-            public void greetSomeone(String someone) {
-                name = someone;
-                System.out.println("Hello " + name);
-            }
+    }
+
+    interface C {
+
+    }
+
+    class D <T extends Dog, B, C> {
+
+    }
+    public static void main(String[] args){
+        int[] array = {1, 5, 3};
+        int a;
+        try {
+            a = array[4];
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("IndexOutOfBoundsException");
+        } catch (Exception e) {
+            System.out.println("Exception");
         }
-
-        HelloWorld englishGreeting = new EnglishGreeting();
-
-        HelloWorld frenchGreeting = new HelloWorld() {
-            String name = "tout le monde";
-            public void greet() {
-                greetSomeone("tout le monde");
-            }
-            public void greetSomeone(String someone) {
-                name = someone;
-                System.out.println("Salut " + name);
-            }
-        };
-
-        HelloWorld spanishGreeting = new HelloWorld() {
-            @Override
-            public void greet() {
-
-            }
-
-            @Override
-            public void greetSomeone(String someone) {
-
-            }
-        };
-        englishGreeting.greet();
-        frenchGreeting.greetSomeone("Fred");
-        spanishGreeting.greet();
-    }
-
-    public static void main(String... args) {
-        Cat myApp = new Cat();
-        myApp.sayHello();
     }
 }
