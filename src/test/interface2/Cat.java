@@ -1,32 +1,21 @@
 package test.interface2;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 class Cat {
 
-    class A {
+    static Dog dog = new Dog("James");
 
+    public static void changDogName(Dog dog) {
+        dog = new Dog("Tommy");
     }
 
-    interface B {
-
-    }
-
-    interface C {
-
-    }
-
-    class D <T extends Dog, B, C> {
-
-    }
-    public static void main(String[] args){
-        int[] array = {1, 5, 3};
-        int a;
-        try {
-            a = array[4];
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("IndexOutOfBoundsException");
-        } catch (Exception e) {
-            System.out.println("Exception");
-        }
+    public static void main(String[] args) {
+        System.out.println(dog.getName());
+        Cat.changDogName(dog);
+        System.out.println(dog.getName());
     }
 }

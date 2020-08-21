@@ -1,14 +1,21 @@
 package test.interface2;
 
-public class Dog implements Animal, Mammal {
+public class Dog {
 
-    public static void main(String[] args) {
-        Dog dog = new Dog();
+    private String name;
 
+    public Dog() {
     }
 
-    @Override
-    public void sleep() {
+    public Dog(String name) {
+        this.name = name;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
